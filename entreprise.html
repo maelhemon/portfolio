@@ -1,37 +1,527 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Entreprise</title>
-    <link rel="stylesheet" href="style.css">
-</head>l
+    <title>Document</title>
+     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --france-blue: #003DA5;
+            --france-red: #ED2939;
+            --navy: #001f3f;
+            --light: #f8f9fa;
+            --gray: #e9ecef;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: var(--light);
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(to right, var(--france-blue) 33%, white 33%, white 66%, var(--france-red) 66%);
+            padding: 4px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        nav {
+            background: var(--navy);
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--france-red);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--france-blue), var(--navy));
+            color: white;
+            padding: 4rem 2rem;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--france-red);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .profile-photo {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 7rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            border: 5px solid white;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .section {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--france-blue);
+            margin-bottom: 0.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 4px solid var(--france-red);
+            display: inline-block;
+        }
+
+        .competences-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .competence-card {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 5px solid var(--france-blue);
+        }
+
+        .competence-card h3 {
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .comp-num {
+            background: var(--france-blue);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .mission-card {
+            border: 2px solid var(--gray);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .mission-card:hover {
+            border-color: var(--france-blue);
+            box-shadow: 0 8px 25px rgba(0,61,165,0.1);
+        }
+
+        .mission-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+
+        .mission-title {
+            font-size: 1.4rem;
+            color: var(--france-blue);
+            font-weight: 600;
+        }
+
+        .mission-period {
+            background: var(--france-red);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .comp-badges {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .badge {
+            background: var(--light);
+            color: var(--france-blue);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--gray);
+        }
+
+        .mission-detail {
+            display: none;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--gray);
+        }
+
+        .mission-detail.active {
+            display: block;
+        }
+
+        .detail-section {
+            margin-bottom: 2rem;
+        }
+
+        .detail-section h4 {
+            color: var(--navy);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .detail-section ul {
+            list-style: none;
+            padding-left: 1rem;
+        }
+
+        .detail-section li {
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .detail-section li::before {
+            content: '▸';
+            color: var(--france-red);
+            position: absolute;
+            left: 0;
+        }
+
+        .bilan-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+
+        .bilan-table th,
+        .bilan-table td {
+            padding: 1rem;
+            text-align: left;
+            border: 1px solid var(--gray);
+        }
+
+        .bilan-table th {
+            background: var(--france-blue);
+            color: white;
+            font-weight: 600;
+        }
+
+        .bilan-table tr:nth-child(even) {
+            background: var(--light);
+        }
+
+        .niveau {
+            display: flex;
+            gap: 0.2rem;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--gray);
+        }
+
+        .dot.filled {
+            background: var(--france-blue);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .info-card {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .info-card h3 {
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background: var(--navy);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer::before {
+            content: '';
+            display: block;
+            height: 4px;
+            background: linear-gradient(to right, var(--france-blue) 33%, white 33%, white 66%, var(--france-red) 66%);
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 968px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            .mission-header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
 <body>
-    <header>
-        <h1>Mon Entreprise</h1>
+     <header>
         <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="bilan.html">Bilan de compétences</a></li>
-                <li><a href="missions.html">Mes Missions</a></li>
-                <li><a href="entreprise.html">Mon Entreprise</a></li>
-            </ul>
+            <div class="nav-container">
+                <div class="logo">Portfolio  🇫🇷</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="entreprise.html">Entreprise</a></li>
+                    <li><a href="missions.html">Missions</a></li>
+                    <li><a href="bilan.html">Bilan</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
+    <!-- HERO ENTREPRISE -->
+<section class="hero">
+    <div class="hero-container">
+        <div>
+            <h1>Présentation de l’entreprise</h1>
+            <p class="subtitle">Entreprise d’accueil & projection professionnelle</p>
+            <p>
+                Cette section présente l’entreprise dans laquelle j’effectue mon alternance / stage,
+                mon rôle au sein de celle-ci ainsi que le lien avec mon projet professionnel.
+            </p>
+        </div>
+        <div class="profile-photo">
+            🏢
+        </div>
+    </div>
+</section>
 
-    <section>
-        <h2>Présentation de mon entreprise</h2>
-        <p>Mon entreprise, [Nom de ton entreprise], se spécialise dans [description de tes activités].</p>
-        <p>Voici quelques projets récents :</p>
-        <ul>
-            <li>Projet 1 : [Détails du projet]</li>
-            <li>Projet 2 : [Détails du projet]</li>
-            <li>Projet 3 : [Détails du projet]</li>
-        </ul>
+<!-- CONTENU PRINCIPAL -->
+<main class="container">
+
+    <!-- 1. DESCRIPTION DE L’ENTREPRISE -->
+    <section class="section">
+        <h2 class="section-title">1. Présentation générale de l’entreprise</h2>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>Informations générales</h3>
+                <p><strong>Nom :</strong> À compléter</p>
+                <p><strong>Secteur :</strong> À compléter</p>
+                <p><strong>Taille :</strong> TPE / PME / Grande entreprise</p>
+                <p><strong>Localisation :</strong> À compléter</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Activité</h3>
+                <p>
+                    L’entreprise exerce son activité dans le domaine de <em>...</em>.
+                    Elle propose des services / produits tels que <em>...</em> et répond
+                    aux besoins de <em>type de clients</em>.
+                </p>
+            </div>
+        </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Mon Portfolio - Tous droits réservés</p>
-    </footer>
+    <!-- 2. POSITIONNEMENT DU SERVICE -->
+    <section class="section">
+        <h2 class="section-title">2. Positionnement du service</h2>
+
+        <p>
+            J’ai été intégré(e) au sein du service <strong>...</strong>.
+            Ce service occupe une place essentielle dans l’organisation de l’entreprise
+            car il est chargé de <em>missions principales du service</em>.
+        </p>
+
+        <p>
+            Il travaille en collaboration avec les services <em>...</em> afin d’assurer
+            la cohérence et l’efficacité des projets menés.
+        </p>
+    </section>
+
+    <!-- 3. MISSIONS ET RESPONSABILITÉS -->
+    <section class="section">
+        <h2 class="section-title">3. Missions confiées et responsabilités</h2>
+
+        <div class="competences-grid">
+            <div class="competence-card">
+                <h3><span class="comp-num">1</span> Mission principale</h3>
+                <p>Description de la mission réalisée et objectifs associés.</p>
+            </div>
+
+            <div class="competence-card">
+                <h3><span class="comp-num">2</span> Mission secondaire</h3>
+                <p>Participation, assistance ou gestion d’une tâche spécifique.</p>
+            </div>
+
+            <div class="competence-card">
+                <h3><span class="comp-num">3</span> Responsabilités</h3>
+                <p>Niveau d’autonomie, prise d’initiative et responsabilités confiées.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. ÉVOLUTION SUR L’ANNÉE -->
+    <section class="section">
+        <h2 class="section-title">4. Évolution au fil de l’année</h2>
+
+        <p>
+            Au début de mon expérience, mes missions étaient principalement axées sur
+            l’observation et la prise en main des outils.
+        </p>
+
+        <p>
+            Progressivement, j’ai gagné en autonomie et en confiance, ce qui m’a permis
+            de prendre en charge des tâches plus complexes et d’assumer davantage de responsabilités.
+        </p>
+    </section>
+
+    <!-- 5. PROJET PROFESSIONNEL -->
+    <section class="section">
+        <h2 class="section-title">5. Lien avec mon projet professionnel</h2>
+
+        <p>
+            Cette expérience professionnelle est en cohérence avec mon projet professionnel,
+            qui est de devenir <strong>métier visé</strong>.
+        </p>
+
+        <table class="bilan-table">
+            <thead>
+                <tr>
+                    <th>Compétences développées</th>
+                    <th>Utilité pour mon projet</th>
+                    <th>Niveau</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Compétence technique</td>
+                    <td>Essentielle pour le métier visé</td>
+                    <td>
+                        <div class="niveau">
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Organisation / autonomie</td>
+                    <td>Indispensable en milieu professionnel</td>
+                    <td>
+                        <div class="niveau">
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>
+            Cette expérience confirme mon choix d’orientation et m’encourage à poursuivre
+            mon parcours dans ce domaine.
+        </p>
+    </section>
+
+</main>
+
 </body>
 </html>

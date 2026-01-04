@@ -3,34 +3,419 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mes Missions</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Portfolio BUT RT - Alternance</title>
+     <style>
+      /* -------------------- */
+/* Reset & Variables */
+/* -------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --france-blue: #003DA5;
+    --france-red: #ED2939;
+    --navy: #001f3f;
+    --light: #f8f9fa;
+    --gray: #e9ecef;
+}
+
+/* -------------------- */
+/* Base */
+/* -------------------- */
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--light);
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+/* -------------------- */
+/* Header & Navigation */
+/* -------------------- */
+
+header {
+    background: linear-gradient(to right, var(--france-blue) 33%, white 33%, white 66%, var(--france-red) 66%);
+    padding: 4px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+nav {
+    background: var(--navy);
+    padding: 1rem 0;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    position: relative;
+    padding-bottom: 0.3rem;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--france-red);
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* -------------------- */
+/* Main Structure */
+/* -------------------- */
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.section {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 3rem;
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: var(--france-blue);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 4px solid var(--france-red);
+    display: inline-block;
+}
+
+/* -------------------- */
+/* Mission Cards */
+/* -------------------- */
+
+.mission-card {
+    border: 2px solid var(--gray);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    background: var(--light);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.mission-card:hover {
+    border-color: var(--france-blue);
+    box-shadow: 0 8px 25px rgba(0,61,165,0.1);
+    transform: translateY(-3px);
+}
+
+.mission-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.mission-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--france-blue);
+}
+
+.mission-period {
+    background: var(--france-red);
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.comp-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.badge {
+    background: white;
+    color: var(--france-blue);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid var(--gray);
+}
+
+/* -------------------- */
+/* Mission Details */
+/* -------------------- */
+
+.mission-detail {
+    display: none;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--gray);
+    animation: fadeIn 0.3s ease;
+}
+
+.mission-detail.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.detail-section {
+    margin-bottom: 2rem;
+}
+
+.detail-section h4 {
+    color: var(--navy);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.detail-section ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+.detail-section li {
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.detail-section li::before {
+    content: '▸';
+    color: var(--france-red);
+    position: absolute;
+    left: 0;
+}
+
+/* -------------------- */
+/* Footer */
+/* -------------------- */
+
+footer {
+    background: var(--navy);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+footer::before {
+    content: '';
+    display: block;
+    height: 4px;
+    background: linear-gradient(to right, var(--france-blue) 33%, white 33%, white 66%, var(--france-red) 66%);
+    margin-bottom: 2rem;
+}
+
+/* -------------------- */
+/* Responsive */
+/* -------------------- */
+
+@media (max-width: 968px) {
+    .mission-header {
+        flex-direction: column;
+    }
+
+    .container {
+        padding: 2rem 1rem;
+    }
+
+    .section {
+        padding: 2rem 1.5rem;
+    }
+}
+
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Mes Missions</h1>
+     <header>
         <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="bilan.html">Bilan de compétences</a></li>
-                <li><a href="missions.html">Mes Missions</a></li>
-                <li><a href="entreprie.html">Mon Entreprise</a></li>
-            </ul>
+            <div class="nav-container">
+                <div class="logo">Portfolio  🇫🇷</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="entreprise.html">Entreprise</a></li>
+                    <li><a href="missions.html">Missions</a></li>
+                    <li><a href="bilan.html">Bilan</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
-    <section>
-        <h2>Missions réalisées</h2>
-        <p>Voici un aperçu des missions sur lesquelles j'ai travaillé :</p>
-        <ul>
-            <li>Mission 1 : [Détails de la mission]</li>
-            <li>Mission 2 : [Détails de la mission]</li>
-            <li>Mission 3 : [Détails de la mission]</li>
-        </ul>
-    </section>
+  
+        <section id="missions" class="section">
+            <h2 class="section-title">Mes Missions</h2>
+            
+            <div class="mission-card" onclick="toggleMission('m1')">
+                <div class="mission-header">
+                    <h3 class="mission-title">Mission 1 : Déploiement Infrastructure Réseau</h3>
+                    <span class="mission-period">Sept - Nov 2024</span>
+                </div>
+                <p>Mise en place d'une architecture réseau complète incluant configuration équipements, routage et sécurisation.</p>
+                <div class="comp-badges">
+                    <span class="badge">C1 - Administrer</span>
+                    <span class="badge">C4 - Sécuriser</span>
+                </div>
+                
+                <div class="mission-detail" id="m1">
+                    <div class="detail-section">
+                        <h4>📋 Contexte et Objectifs</h4>
+                        <p>Ouverture d'un nouveau site nécessitant infrastructure réseau. Enjeu : connectivité, sécurité et performance pour 50 utilisateurs.</p>
+                        <ul>
+                            <li>Acteurs : équipe infra (3 pers.), responsable IT</li>
+                            <li>Contraintes : budget limité, délai 2 mois, compatibilité</li>
+                            <li>Objectif : infrastructure opérationnelle sécurisée</li>
+                        </ul>
+                        <button></button>
+                    </div>
 
+                    <div class="detail-section">
+                        <h4>⚙️ Tâches et Évolution</h4>
+                        <ul>
+                            <li><strong>S1-2 :</strong> Étude besoins, conception architecture</li>
+                            <li><strong>S3-5 :</strong> Config switchs/routeurs Cisco (VLANs, routage)</li>
+                            <li><strong>S6-7 :</strong> Pare-feu, filtrage, VPN site-to-site</li>
+                            <li><strong>S8 :</strong> Tests, documentation, formation</li>
+                            <li>Autonomie progressive : supervisé puis autonome S5</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-section">
+                        <h4>🎓 Compétences & AC Mobilisés</h4>
+                        <ul>
+                            <li><strong>C1 :</strong> Config avancée (VLANs, routage, protocols)</li>
+                            <li><strong>C4 :</strong> Sécurité, pare-feu, segmentation</li>
+                            <li><strong>AC :</strong> Configurer/dépanner services, garantir QoS</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-section">
+                        <h4>📎 Traces et Preuves</h4>
+                        <ul>
+                            <li>Schémas architecture (Packet Tracer)</li>
+                            <li>Configs équipements anonymisées</li>
+                            <li>Documentation technique</li>
+                            <li>Rapports tests/validation</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-section">
+                        <h4>💭 Analyse Réflexive</h4>
+                        <p><strong>Apprentissages :</strong> Maîtrise VLANs et routage inter-VLAN approfondie. Importance documentation.</p>
+                        <p><strong>Difficultés :</strong> Compatibilité versions IOS. Résolu via doc Cisco.</p>
+                        <p><strong>Évolution :</strong> Autonomie partielle → complète. Communication améliorée.</p>
+                        <p><strong>Niveau :</strong> Intermédiaire/Avancé - bonne maîtrise, résolution autonome.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mission-card" onclick="toggleMission('m2')">
+                <div class="mission-header">
+                    <h3 class="mission-title">Mission 2 : Outil de Monitoring Réseau</h3>
+                    <span class="mission-period">Déc 2024 - Fév 2025</span>
+                </div>
+                <p>Développement application web de supervision temps réel avec alertes automatiques.</p>
+                <div class="comp-badges">
+                    <span class="badge">C3 - Créer outils</span>
+                    <span class="badge">C1 - Administrer</span>
+                </div>
+                
+                <div class="mission-detail" id="m2">
+                    <p style="color: #666;">Détails de la mission à compléter selon même structure...</p>
+                </div>
+            </div>
+
+            <div class="mission-card" onclick="toggleMission('m3')">
+                <div class="mission-header">
+                    <h3 class="mission-title">Mission 3 : Optimisation WiFi Multi-sites</h3>
+                    <span class="mission-period">Mars - Mai 2025</span>
+                </div>
+                <p>Amélioration couverture et performances WiFi avec nouveaux APs et optimisation canaux.</p>
+                <div class="comp-badges">
+                    <span class="badge">C2 - Connecter</span>
+                    <span class="badge">C1 - Administrer</span>
+                </div>
+                
+                <div class="mission-detail" id="m3">
+                    <p style="color: #666;">Détails de la mission à compléter...</p>
+                </div>
+            </div>
+        </section>
+        <script>
+        function toggleMission(id) {
+            const detail = document.getElementById(id);
+            const wasActive = detail.classList.contains('active');
+            
+            document.querySelectorAll('.mission-detail').forEach(d => {
+                d.classList.remove('active');
+            });
+            
+            if (!wasActive) {
+                detail.classList.add('active');
+            }
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
     <footer>
-        <p>&copy; 2025 Mon Portfolio - Tous droits réservés</p>
+        <p>&copy; 2025 Portfolio BUT RT - Maël HEMON</p>
     </footer>
 </body>
 </html>
