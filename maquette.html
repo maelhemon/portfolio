@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission 4 – Serveur TFTP</title>
+
+    <style>
+        /* ==== DESIGN IDENTIQUE AU PORTFOLIO ==== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --france-blue: #003DA5;
+            --france-red: #ED2939;
+            --navy: #001f3f;
+            --light: #f8f9fa;
+            --gray: #e9ecef;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: var(--light);
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(to right, var(--france-blue) 33%, white 33%, white 66%, var(--france-red) 66%);
+            padding: 4px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        nav { background: var(--navy); padding: 1rem 0; }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo { color: white; font-weight: bold; font-size: 1.3rem; }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            position: relative;
+            padding-bottom: .3rem;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 0; height: 3px;
+            background: var(--france-red);
+            transition: .3s;
+        }
+
+        .nav-links a:hover::after { width: 100%; }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 3rem 2rem;
+        }
+
+        .section {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,.08);
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--france-blue);
+            border-bottom: 4px solid var(--france-red);
+            display: inline-block;
+            padding-bottom: .4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .badges {
+            display: flex;
+            gap: .7rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: var(--gray);
+            padding: .4rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            color: var(--france-blue);
+        }
+
+        .period { background: var(--france-red); color: white; }
+
+        .detail-section { margin-top: 2.5rem; }
+
+        .detail-section h3 {
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .detail-section ul {
+            list-style: none;
+            padding-left: 1rem;
+        }
+
+        .detail-section li {
+            padding-left: 1rem;
+            margin-bottom: .5rem;
+            position: relative;
+        }
+
+        .detail-section li::before {
+            content: "▸";
+            color: var(--france-red);
+            position: absolute;
+            left: 0;
+        }
+
+        footer {
+            background: var(--navy);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Portfolio 🇫🇷</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="missions.html">Missions</a></li>
+                <li><a href="bilan.html">Bilan</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main class="container">
+    <section class="section">
+
+        <h1 class="section-title">Mission 4 – Mise en place d’un serveur TFTP</h1>
+
+        <div class="badges">
+            <span class="badge period">Novembre 2024 – Aujourd’hui</span>
+            <span class="badge">C1 – Administrer</span>
+            <span class="badge">C4 – Sécuriser</span>
+        </div>
+
+        <p>
+            Cette mission consiste à déployer un serveur TFTP afin de centraliser les sauvegardes
+            et restaurations des configurations des équipements réseaux.
+        </p>
+
+        <div class="detail-section">
+            <h3>📋 Contexte et Objectifs</h3>
+            <ul>
+                <li>Besoin de sauvegarde automatique des équipements réseau</li>
+                <li>Centralisation des fichiers de configuration</li>
+                <li>Sécurisation des accès au serveur</li>
+            </ul>
+        </div>
+
+        <div class="detail-section">
+            <h3>⚙️ Tâches Réalisées</h3>
+            <ul>
+                <li>Installation et configuration du service TFTP</li>
+                <li>Tests de sauvegarde et de restauration</li>
+                <li>Gestion des droits et restrictions d’accès</li>
+                <li>Documentation d’exploitation</li>
+            </ul>
+        </div>
+
+        <div class="detail-section">
+            <h3>🎓 Compétences Mobilisées</h3>
+            <ul>
+                <li>C1 : administration de services réseaux</li>
+                <li>C4 : sécurisation des échanges et accès</li>
+            </ul>
+        </div>
+
+        <div class="detail-section">
+            <h3>💭 Analyse Réflexive</h3>
+            <p>
+                Cette mission m’a permis de comprendre l’importance des sauvegardes réseau et
+                d’appliquer des bonnes pratiques de sécurité.
+            </p>
+        </div>
+
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Portfolio BUT RT – Maël HEMON</p>
+</footer>
+
+</body>
+</html>

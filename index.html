@@ -4,12 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio BUT RT - Alternance</title>
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
             --france-blue: #003DA5;
@@ -42,7 +39,7 @@
 
         .nav-container {
             max-width: 1400px;
-            margin: 0 auto;
+            margin: auto;
             padding: 0 2rem;
             display: flex;
             justify-content: space-between;
@@ -50,24 +47,22 @@
         }
 
         .logo {
+            color: white;
             font-size: 1.3rem;
             font-weight: bold;
-            color: white;
         }
 
         .nav-links {
+            list-style: none;
             display: flex;
             gap: 2rem;
-            list-style: none;
         }
 
         .nav-links a {
             color: white;
             text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s;
-            padding: 0.5rem 0;
             position: relative;
+            padding-bottom: .3rem;
         }
 
         .nav-links a::after {
@@ -78,7 +73,7 @@
             width: 0;
             height: 3px;
             background: var(--france-red);
-            transition: width 0.3s;
+            transition: .3s;
         }
 
         .nav-links a:hover::after {
@@ -93,46 +88,41 @@
 
         .hero-container {
             max-width: 1200px;
-            margin: 0 auto;
+            margin: auto;
             display: grid;
             grid-template-columns: 2fr 1fr;
             gap: 3rem;
             align-items: center;
         }
 
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
+        .hero h1 { font-size: 2.5rem; }
 
         .subtitle {
             font-size: 1.2rem;
             color: var(--france-red);
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin: 1rem 0;
         }
 
-       .profile-photo {
-    width: 250px;
-    height: 250px;
-    border-radius: 60%;
-    overflow: hidden;          /* 🔑 indispensable */
-    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-    border: 5px solid white;
-    margin: 0 auto;
-    background-color: white;
-}
+        .profile-photo {
+            width: 250px;
+            height: 250px;
+            border-radius: 60%;
+            overflow: hidden;
+            border: 5px solid white;
+            box-shadow: 0 10px 40px rgba(0,0,0,.3);
+            margin: auto;
+        }
 
-.profile-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: 60% center;
-}
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
 
         .container {
             max-width: 1400px;
-            margin: 0 auto;
+            margin: auto;
             padding: 3rem 2rem;
         }
 
@@ -140,51 +130,17 @@
             background: white;
             padding: 3rem;
             border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 20px rgba(0,0,0,.08);
             margin-bottom: 3rem;
         }
 
         .section-title {
             font-size: 2rem;
             color: var(--france-blue);
-            margin-bottom: 0.5rem;
-            padding-bottom: 1rem;
             border-bottom: 4px solid var(--france-red);
             display: inline-block;
-        }
-
-        .competences-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .competence-card {
-            background: var(--light);
-            padding: 1.5rem;
-            border-radius: 10px;
-            border-left: 5px solid var(--france-blue);
-        }
-
-        .competence-card h3 {
-            color: var(--navy);
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .comp-num {
-            background: var(--france-blue);
-            color: white;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
+            padding-bottom: .5rem;
+            margin-bottom: 2rem;
         }
 
         .mission-card {
@@ -192,24 +148,23 @@
             border-radius: 10px;
             padding: 2rem;
             margin-bottom: 2rem;
-            cursor: pointer;
-            transition: all 0.3s;
+            transition: .3s;
         }
 
         .mission-card:hover {
             border-color: var(--france-blue);
-            box-shadow: 0 8px 25px rgba(0,61,165,0.1);
+            box-shadow: 0 8px 25px rgba(0,61,165,.1);
         }
 
         .mission-header {
             display: flex;
             justify-content: space-between;
-            align-items: start;
-            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
         .mission-title {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: var(--france-blue);
             font-weight: 600;
         }
@@ -217,122 +172,42 @@
         .mission-period {
             background: var(--france-red);
             color: white;
-            padding: 0.3rem 1rem;
+            padding: .3rem 1rem;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: .9rem;
         }
 
         .comp-badges {
             display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
+            gap: .5rem;
             margin-top: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
         }
 
         .badge {
             background: var(--light);
             color: var(--france-blue);
-            padding: 0.3rem 0.8rem;
+            padding: .3rem .8rem;
             border-radius: 15px;
-            font-size: 0.85rem;
+            border: 1px solid var(--gray);
+            font-size: .85rem;
             font-weight: 600;
-            border: 1px solid var(--gray);
         }
 
-        .mission-detail {
-            display: none;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 2px solid var(--gray);
-        }
-
-        .mission-detail.active {
-            display: block;
-        }
-
-        .detail-section {
-            margin-bottom: 2rem;
-        }
-
-        .detail-section h4 {
-            color: var(--navy);
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .detail-section ul {
-            list-style: none;
-            padding-left: 1rem;
-        }
-
-        .detail-section li {
-            margin-bottom: 0.5rem;
-            padding-left: 1rem;
-            position: relative;
-        }
-
-        .detail-section li::before {
-            content: '▸';
-            color: var(--france-red);
-            position: absolute;
-            left: 0;
-        }
-
-        .bilan-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0;
-        }
-
-        .bilan-table th,
-        .bilan-table td {
-            padding: 1rem;
-            text-align: left;
-            border: 1px solid var(--gray);
-        }
-
-        .bilan-table th {
-            background: var(--france-blue);
+        .more {
+            background: var(--france-red);
             color: white;
+            border: none;
+            padding: .4rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
             font-weight: 600;
+            text-decoration: none;
         }
 
-        .bilan-table tr:nth-child(even) {
-            background: var(--light);
-        }
-
-        .niveau {
-            display: flex;
-            gap: 0.2rem;
-        }
-
-        .dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: var(--gray);
-        }
-
-        .dot.filled {
-            background: var(--france-blue);
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .info-card {
-            background: var(--light);
-            padding: 1.5rem;
-            border-radius: 8px;
-        }
-
-        .info-card h3 {
-            color: var(--navy);
-            margin-bottom: 1rem;
+        .more:hover {
+            opacity: .85;
         }
 
         footer {
@@ -350,385 +225,75 @@
             background: linear-gradient(to right, var(--france-blue) 33%, white 33%, white 66%, var(--france-red) 66%);
             margin-bottom: 2rem;
         }
-        .more{
-            background-color: #ED2939;
-            color: #003DA5;
-        }
+
         @media (max-width: 968px) {
-            .hero-container {
-                grid-template-columns: 1fr;
-            }
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-            .mission-header {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
+            .hero-container { grid-template-columns: 1fr; }
+            .mission-header { flex-direction: column; }
         }
     </style>
 </head>
+
 <body>
-    <header>
-        <nav>
-            <div class="nav-container">
-                <div class="logo">Portfolio  🇫🇷</div>
-                <ul class="nav-links">
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="entreprise.html">Entreprise</a></li>
-                    <li><a href="missions.html">Missions</a></li>
-                    <li><a href="bilan.html">Bilan</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
 
-    <section id="accueil" class="hero">
-        <div class="hero-container">
-            <div>
-                <h1>Maël HEMON</h1>
-                <p class="subtitle">BUT Réseaux & Télécommunications parcours Cybersécurité - Alternance (2A)</p>
-                <p>Bienvenue sur mon portfolio professionnel.</p>
-                <p style="margin-top: 1rem;">À travers ce portfolio, vous découvrirez l'entreprise dans laquelle je réalise cette alternance, <br> les missions pour lesquelles je prends part ainsi que le bilan non définitif de mes compétences acquises au sein de cette riche aventure humaine et technique.</p>
-            </div>
-            <div class="profile-photo"><img src="photo_profile.jpg" alt="photo_profile"></div>
+<header>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Portfolio 🇫🇷</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="entreprise.html">Entreprise</a></li>
+                <li><a href="missions.html">Missions</a></li>
+                <li><a href="bilan.html">Bilan</a></li>
+            </ul>
         </div>
-    </section>
-     <section id="entreprise" class="section">
-            <h2 class="section-title">Présentation & Projection</h2>
-            
-            <div class="info-grid">
-                <div class="info-card">
-                    <h3>📍 L'Entreprise</h3>
-                    <p><strong>Nom :</strong> Commissariant au Numérique de Défense (CND) - Ministère des armées</p>
-                    <br>
-                    <p><strong>Secteur :</strong> Télécommunications et informatique </p>
-                    <br>
-                    <p><strong>Effectif :</strong> 7000 employés répartis sur l'ensemble du territoire français et à l'étranger</p>
-                    <br>
-                    <p><strong>Enjeux :</strong> Soutien numérique pour les opérations - Contribution au système de combat de demain  </p>
-                </div>
-                
-                <div class="info-card">
-                    <h3>💼 Mon Rôle</h3>
-                    <p><strong>Poste :</strong> Technicien réseau </p>
-                    <p><strong>Service :</strong> Centre d'Appui au Numérique Cherbourg (CAN)</p>
-                    <p><strong>Période :</strong> septembre 2024 - juin 2027 </p>
-                    <p><strong>Positionnement :</strong> Groupe réseaux-supports du bureau systèmes de communication de la division interventions </p>
-                </div>
-            </div>
+    </nav>
+</header>
 
-            <div style="margin-top: 2rem; padding: 1.5rem; background: var(--light); border-radius: 8px;">
-                <h3 style="color: var(--navy); margin-bottom: 1rem;">🎯 Projection Professionnelle</h3>
-                <p>Description des objectifs professionnels à court/moyen terme, compétences à développer et contribution de cette alternance au projet professionnel.
-                    Cette alternance me permets d'acquérir une riche polyvalence d'un point de vu technique ainsi que d'accumuler de l'expérience professionnelle qui tous deux me seront bénéfiques pour mon avenir professionnel. Par la suite je souhaiterai 
-                </p>
-            </div>
-        </section>
-        <section id="missions" class="section">
-            <h2 class="section-title">Mes Missions</h2>
-            
-            <div class="mission-card" onclick="toggleMission('m1')">
-                <div class="mission-header">
-                    <h3 class="mission-title">Mission 1 : Configuration d'équipements réseaux de différentes marques</h3>
-                    <span class="mission-period">Novembre 2024 - aujdh </span>
-                </div>
-                <p></p>
-                <div class="comp-badges">
-                    <span class="badge">C1 - Administrer</span>
-                    <span class="badge">C4 - Sécuriser</span>
-                </div>
-                
-                
-                <div class="mission-detail" id="m1">
-                    <div class="detail-section">
-                        <h4>📋 Contexte et Objectifs</h4>
-                        <p>Ouverture d'un nouveau site nécessitant infrastructure réseau. Enjeu : connectivité, sécurité et performance pour 50 utilisateurs.</p>
-                        <ul>
-                            <li>Acteurs : équipe infra (3 pers.), responsable IT</li>
-                            <li>Contraintes : budget limité, délai 2 mois, compatibilité</li>
-                            <li>Objectif : infrastructure opérationnelle sécurisée</li>
-                        </ul>
-                        <button></button>
-                    </div>
+<section class="hero">
+    <div class="hero-container">
+        <div>
+            <h1>Maël HEMON</h1>
+            <p class="subtitle">BUT Réseaux & Télécommunications – Cybersécurité (Alternance)</p>
+            <p>Bienvenue sur mon portfolio professionnel.</p>
+        </div>
+        <div class="profile-photo">
+            <img src="photo_profile.jpg" alt="Photo de profil">
+        </div>
+    </div>
+</section>
 
-                    <div class="detail-section">
-                        <h4>⚙️ Tâches et Évolution</h4>
-                        <ul>
-                            <li><strong>S1-2 :</strong> Étude besoins, conception architecture</li>
-                            <li><strong>S3-5 :</strong> Config switchs/routeurs Cisco (VLANs, routage)</li>
-                            <li><strong>S6-7 :</strong> Pare-feu, filtrage, VPN site-to-site</li>
-                            <li><strong>S8 :</strong> Tests, documentation, formation</li>
-                            <li>Autonomie progressive : supervisé puis autonome S5</li>
-                        </ul>
-                    </div>
+<section class="container section">
+    <h2 class="section-title">Mes Missions</h2>
 
-                    <div class="detail-section">
-                        <h4>🎓 Compétences & AC Mobilisés</h4>
-                        <ul>
-                            <li><strong>C1 :</strong> Config avancée (VLANs, routage, protocols)</li>
-                            <li><strong>C4 :</strong> Sécurité, pare-feu, segmentation</li>
-                            <li><strong>AC :</strong> Configurer/dépanner services, garantir QoS</li>
-                        </ul>
-                    </div>
+    <div class="mission-card">
+        <div class="mission-header">
+            <h3 class="mission-title">Mission 4 : Mise en place d’un serveur TFTP</h3>
+            <span class="mission-period">Novembre 2024 – Aujourd’hui</span>
+        </div>
+        <div class="comp-badges">
+            <span class="badge">C1 – Administrer</span>
+            <span class="badge">C4 – Sécuriser</span>
+            <a href="tftp.html" class="more">En savoir plus</a>
+        </div>
+    </div>
 
-                    <div class="detail-section">
-                        <h4>📎 Traces et Preuves</h4>
-                        <ul>
-                            <li>Schémas architecture (Packet Tracer)</li>
-                            <li>Configs équipements anonymisées</li>
-                            <li>Documentation technique</li>
-                            <li>Rapports tests/validation</li>
-                        </ul>
-                    </div>
+    <div class="mission-card">
+        <div class="mission-header">
+            <h3 class="mission-title">Mission 5 : Maquette de refonte réseau d’administration</h3>
+            <span class="mission-period">Novembre 2024 – Aujourd’hui</span>
+        </div>
+        <div class="comp-badges">
+            <span class="badge">C1 – Administrer</span>
+            <span class="badge">C4 – Sécuriser</span>
+            <a href="maquette.html" class="more">En savoir plus</a>
+        </div>
+    </div>
 
-                    <div class="detail-section">
-                        <h4>💭 Analyse Réflexive</h4>
-                        <p><strong>Apprentissages :</strong> Maîtrise VLANs et routage inter-VLAN approfondie. Importance documentation.</p>
-                        <p><strong>Difficultés :</strong> Compatibilité versions IOS. Résolu via doc Cisco.</p>
-                        <p><strong>Évolution :</strong> Autonomie partielle → complète. Communication améliorée.</p>
-                        <p><strong>Niveau :</strong> Intermédiaire/Avancé - bonne maîtrise, résolution autonome.</p>
-                    </div>
-                </div>
-            </div>
+</section>
 
+<footer>
+    <p>&copy; 2025 Portfolio BUT RT – Maël HEMON</p>
+</footer>
 
-             <div class="mission-card" onclick="toggleMission('m1')">
-                <div class="mission-header">
-                    <h3 class="mission-title">Mission 3 :  Rédaction de documentation technique</h3>
-                    <span class="mission-period">Novembre 2024 - aujdh </span>
-                </div>
-                <p></p>
-                <div class="comp-badges">
-                    <span class="badge">C1 - Administrer</span>
-                    <span class="badge">C4 - Sécuriser</span>
-                </div>
-                
-                
-                <div class="mission-detail" id="m1">
-                    <div class="detail-section">
-                        <h4>📋 Contexte et Objectifs</h4>
-                        <p>Ouverture d'un nouveau site nécessitant infrastructure réseau. Enjeu : connectivité, sécurité et performance pour 50 utilisateurs.</p>
-                        <ul>
-                            <li>Acteurs : équipe infra (3 pers.), responsable IT</li>
-                            <li>Contraintes : budget limité, délai 2 mois, compatibilité</li>
-                            <li>Objectif : infrastructure opérationnelle sécurisée</li>
-                        </ul>
-                        <button></button>
-                    </div>
-
-                    <div class="detail-section">
-                        <h4>⚙️ Tâches et Évolution</h4>
-                        <ul>
-                            <li><strong>S1-2 :</strong> Étude besoins, conception architecture</li>
-                            <li><strong>S3-5 :</strong> Config switchs/routeurs Cisco (VLANs, routage)</li>
-                            <li><strong>S6-7 :</strong> Pare-feu, filtrage, VPN site-to-site</li>
-                            <li><strong>S8 :</strong> Tests, documentation, formation</li>
-                            <li>Autonomie progressive : supervisé puis autonome S5</li>
-                        </ul>
-                    </div>
-
-                    <div class="detail-section">
-                        <h4>🎓 Compétences & AC Mobilisés</h4>
-                        <ul>
-                            <li><strong>C1 :</strong> Config avancée (VLANs, routage, protocols)</li>
-                            <li><strong>C4 :</strong> Sécurité, pare-feu, segmentation</li>
-                            <li><strong>AC :</strong> Configurer/dépanner services, garantir QoS</li>
-                        </ul>
-                    </div>
-
-                    <div class="detail-section">
-                        <h4>📎 Traces et Preuves</h4>
-                        <ul>
-                            <li>Schémas architecture (Packet Tracer)</li>
-                            <li>Configs équipements anonymisées</li>
-                            <li>Documentation technique</li>
-                            <li>Rapports tests/validation</li>
-                        </ul>
-                    </div>
-
-                    <div class="detail-section">
-                        <h4>💭 Analyse Réflexive</h4>
-                        <p><strong>Apprentissages :</strong> Maîtrise VLANs et routage inter-VLAN approfondie. Importance documentation.</p>
-                        <p><strong>Difficultés :</strong> Compatibilité versions IOS. Résolu via doc Cisco.</p>
-                        <p><strong>Évolution :</strong> Autonomie partielle → complète. Communication améliorée.</p>
-                        <p><strong>Niveau :</strong> Intermédiaire/Avancé - bonne maîtrise, résolution autonome.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mission-card" onclick="toggleMission('m1')">
-                <div class="mission-header">
-                    <h3 class="mission-title">Mission 2 :  Brassage et déploiements de matériels réseaux</h3>
-                    <span class="mission-period">Novembre 2024 - aujdh </span>
-                </div>
-                <p></p>
-                <div class="comp-badges">
-                    <span class="badge">C1 - Administrer</span>
-                    <span class="badge">C4 - Sécuriser</span>
-                </div>
-                
-                
-                <div class="mission-detail" id="m1">
-                    <div class="detail-section">
-                        <h4>📋 Contexte et Objectifs</h4>
-                        <p>Ouverture d'un nouveau site nécessitant infrastructure réseau. Enjeu : connectivité, sécurité et performance pour 50 utilisateurs.</p>
-                        <ul>
-                            <li>Acteurs : équipe infra (3 pers.), responsable IT</li>
-                            <li>Contraintes : budget limité, délai 2 mois, compatibilité</li>
-                            <li>Objectif : infrastructure opérationnelle sécurisée</li>
-                        </ul>
-                        <button></button>
-                    </div>
-
-                    <div class="detail-section">
-                        <h4>⚙️ Tâches et Évolution</h4>
-                        <ul>
-                            <li><strong>S1-2 :</strong> Étude besoins, conception architecture</li>
-                            <li><strong>S3-5 :</strong> Config switchs/routeurs Cisco (VLANs, routage)</li>
-                            <li><strong>S6-7 :</strong> Pare-feu, filtrage, VPN site-to-site</li>
-                            <li><strong>S8 :</strong> Tests, documentation, formation</li>
-                            <li>Autonomie progressive : supervisé puis autonome S5</li>
-                        </ul>
-                    </div>
-
-                    <div class="detail-section">
-                        <h4>🎓 Compétences & AC Mobilisés</h4>
-                        <ul>
-                            <li><strong>C1 :</strong> Config avancée (VLANs, routage, protocols)</li>
-                            <li><strong>C4 :</strong> Sécurité, pare-feu, segmentation</li>
-                            <li><strong>AC :</strong> Configurer/dépanner services, garantir QoS</li>
-                        </ul>
-                    </div>
-
-                    <div class="detail-section">
-                        <h4>📎 Traces et Preuves</h4>
-                        <ul>
-                            <li>Schémas architecture (Packet Tracer)</li>
-                            <li>Configs équipements anonymisées</li>
-                            <li>Documentation technique</li>
-                            <li>Rapports tests/validation</li>
-                        </ul>
-                    </div>
-
-                    <div class="detail-section">
-                        <h4>💭 Analyse Réflexive</h4>
-                        <p><strong>Apprentissages :</strong> Maîtrise VLANs et routage inter-VLAN approfondie. Importance documentation.</p>
-                        <p><strong>Difficultés :</strong> Compatibilité versions IOS. Résolu via doc Cisco.</p>
-                        <p><strong>Évolution :</strong> Autonomie partielle → complète. Communication améliorée.</p>
-                        <p><strong>Niveau :</strong> Intermédiaire/Avancé - bonne maîtrise, résolution autonome.</p>
-                    </div>
-                </div>
-
-             
-                </div>
-            </div>
-            <div class="mission-card" onclick="toggleMission('m1')">
-                <div class="mission-header">
-                    <h3 class="mission-title">Mission 4 :  Mise en place d'un serveur tftp</h3>
-                    <span class="mission-period">Novembre 2024 - aujdh </span>
-                </div>
-                <p></p>
-                <div class="comp-badges">
-                    <span class="badge">C1 - Administrer</span>
-                    <span class="badge">C4 - Sécuriser</span>
-                    <button class="more">En savoir plus</button>
-                </div>
-            </div>   
-            
-
-             <div class="mission-card" onclick="toggleMission('m1')">
-                <div class="mission-header">
-                    <h3 class="mission-title">Mission 5 :  Réalisation d'une maquette pour le projet de refonte du réseau d'administration à distance des équipements réseaux </h3>
-                    <span class="mission-period">Novembre 2024 - aujdh </span>
-                </div>
-                <p></p>
-                <div class="comp-badges">
-                    <span class="badge">C1 - Administrer</span>
-                    <span class="badge">C4 - Sécuriser</span>
-                </div>
-                
-                
-                <div class="mission-detail" id="m1">
-                    <div class="detail-section">
-                        <h4>📋 Contexte et Objectifs</h4>
-                        <p>Ouverture d'un nouveau site nécessitant infrastructure réseau. Enjeu : connectivité, sécurité et performance pour 50 utilisateurs.</p>
-                        <ul>
-                            <li>Acteurs : équipe infra (3 pers.), responsable IT</li>
-                            <li>Contraintes : budget limité, délai 2 mois, compatibilité</li>
-                            <li>Objectif : infrastructure opérationnelle sécurisée</li>
-                        </ul>
-                        <button></button>
-                    </div>
-
-                    <div class="detail-section">
-                        <h4>⚙️ Tâches et Évolution</h4>
-                        <ul>
-                            <li><strong>S1-2 :</strong> Étude besoins, conception architecture</li>
-                            <li><strong>S3-5 :</strong> Config switchs/routeurs Cisco (VLANs, routage)</li>
-                            <li><strong>S6-7 :</strong> Pare-feu, filtrage, VPN site-to-site</li>
-                            <li><strong>S8 :</strong> Tests, documentation, formation</li>
-                            <li>Autonomie progressive : supervisé puis autonome S5</li>
-                        </ul>
-                    </div>
-
-                    <div class="detail-section">
-                        <h4>🎓 Compétences & AC Mobilisés</h4>
-                        <ul>
-                            <li><strong>C1 :</strong> Config avancée (VLANs, routage, protocols)</li>
-                            <li><strong>C4 :</strong> Sécurité, pare-feu, segmentation</li>
-                            <li><strong>AC :</strong> Configurer/dépanner services, garantir QoS</li>
-                        </ul>
-                    </div>
-
-                    <div class="detail-section">
-                        <h4>📎 Traces et Preuves</h4>
-                        <ul>
-                            <li>Schémas architecture (Packet Tracer)</li>
-                            <li>Configs équipements anonymisées</li>
-                            <li>Documentation technique</li>
-                            <li>Rapports tests/validation</li>
-                        </ul>
-                    </div>
-
-                    <div class="detail-section">
-                        <h4>💭 Analyse Réflexive</h4>
-                        <p><strong>Apprentissages :</strong> Maîtrise VLANs et routage inter-VLAN approfondie. Importance documentation.</p>
-                        <p><strong>Difficultés :</strong> Compatibilité versions IOS. Résolu via doc Cisco.</p>
-                        <p><strong>Évolution :</strong> Autonomie partielle → complète. Communication améliorée.</p>
-                        <p><strong>Niveau :</strong> Intermédiaire/Avancé - bonne maîtrise, résolution autonome.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <script>
-        function toggleMission(id) {
-            const detail = document.getElementById(id);
-            const wasActive = detail.classList.contains('active');
-            
-            document.querySelectorAll('.mission-detail').forEach(d => {
-                d.classList.remove('active');
-            });
-            
-            if (!wasActive) {
-                detail.classList.add('active');
-            }
-        }
-
-        document.querySelectorAll('a[href^="#"]').forEach(a => {
-            a.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
-    
-
-    <footer>
-        <p>&copy; 2025 Portfolio BUT RT - Maël HEMON</p>
-    </footer>
 </body>
 </html>
