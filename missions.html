@@ -296,124 +296,31 @@ footer::before {
         <section id="missions" class="section">
             <h2 class="section-title">Mes Missions</h2>
             
-            <div class="mission-card" onclick="toggleMission('m1')">
-                <div class="mission-header">
-                    <h3 class="mission-title">Mission 1 : Déploiement Infrastructure Réseau</h3>
-                    <span class="mission-period">Sept - Nov 2024</span>
-                </div>
-                <p>Mise en place d'une architecture réseau complète incluant configuration équipements, routage et sécurisation.</p>
-                <div class="comp-badges">
-                    <span class="badge">C1 - Administrer</span>
-                    <span class="badge">C4 - Sécuriser</span>
-                </div>
-                
-                <div class="mission-detail" id="m1">
-                    <div class="detail-section">
-                        <h4>📋 Contexte et Objectifs</h4>
-                        <p>Ouverture d'un nouveau site nécessitant infrastructure réseau. Enjeu : connectivité, sécurité et performance pour 50 utilisateurs.</p>
-                        <ul>
-                            <li>Acteurs : équipe infra (3 pers.), responsable IT</li>
-                            <li>Contraintes : budget limité, délai 2 mois, compatibilité</li>
-                            <li>Objectif : infrastructure opérationnelle sécurisée</li>
-                        </ul>
-                        <button></button>
-                    </div>
+            <div class="mission-card">
+        <div class="mission-header">
+            <h3 class="mission-title">Mission 4 : Mise en place d’un serveur TFTP</h3>
+            <span class="mission-period">Novembre 2024 – Aujourd’hui</span>
+        </div>
+        <div class="comp-badges">
+            <span class="badge">C1 – Administrer</span>
+            <span class="badge">C4 – Sécuriser</span>
+            <a href="tftp.html" class="more">En savoir plus</a>
+        </div>
+    </div>
 
-                    <div class="detail-section">
-                        <h4>⚙️ Tâches et Évolution</h4>
-                        <ul>
-                            <li><strong>S1-2 :</strong> Étude besoins, conception architecture</li>
-                            <li><strong>S3-5 :</strong> Config switchs/routeurs Cisco (VLANs, routage)</li>
-                            <li><strong>S6-7 :</strong> Pare-feu, filtrage, VPN site-to-site</li>
-                            <li><strong>S8 :</strong> Tests, documentation, formation</li>
-                            <li>Autonomie progressive : supervisé puis autonome S5</li>
-                        </ul>
-                    </div>
-
-                    <div class="detail-section">
-                        <h4>🎓 Compétences & AC Mobilisés</h4>
-                        <ul>
-                            <li><strong>C1 :</strong> Config avancée (VLANs, routage, protocols)</li>
-                            <li><strong>C4 :</strong> Sécurité, pare-feu, segmentation</li>
-                            <li><strong>AC :</strong> Configurer/dépanner services, garantir QoS</li>
-                        </ul>
-                    </div>
-
-                    <div class="detail-section">
-                        <h4>📎 Traces et Preuves</h4>
-                        <ul>
-                            <li>Schémas architecture (Packet Tracer)</li>
-                            <li>Configs équipements anonymisées</li>
-                            <li>Documentation technique</li>
-                            <li>Rapports tests/validation</li>
-                        </ul>
-                    </div>
-
-                    <div class="detail-section">
-                        <h4>💭 Analyse Réflexive</h4>
-                        <p><strong>Apprentissages :</strong> Maîtrise VLANs et routage inter-VLAN approfondie. Importance documentation.</p>
-                        <p><strong>Difficultés :</strong> Compatibilité versions IOS. Résolu via doc Cisco.</p>
-                        <p><strong>Évolution :</strong> Autonomie partielle → complète. Communication améliorée.</p>
-                        <p><strong>Niveau :</strong> Intermédiaire/Avancé - bonne maîtrise, résolution autonome.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mission-card" onclick="toggleMission('m2')">
-                <div class="mission-header">
-                    <h3 class="mission-title">Mission 2 : Outil de Monitoring Réseau</h3>
-                    <span class="mission-period">Déc 2024 - Fév 2025</span>
-                </div>
-                <p>Développement application web de supervision temps réel avec alertes automatiques.</p>
-                <div class="comp-badges">
-                    <span class="badge">C3 - Créer outils</span>
-                    <span class="badge">C1 - Administrer</span>
-                </div>
-                
-                <div class="mission-detail" id="m2">
-                    <p style="color: #666;">Détails de la mission à compléter selon même structure...</p>
-                </div>
-            </div>
-
-            <div class="mission-card" onclick="toggleMission('m3')">
-                <div class="mission-header">
-                    <h3 class="mission-title">Mission 3 : Optimisation WiFi Multi-sites</h3>
-                    <span class="mission-period">Mars - Mai 2025</span>
-                </div>
-                <p>Amélioration couverture et performances WiFi avec nouveaux APs et optimisation canaux.</p>
-                <div class="comp-badges">
-                    <span class="badge">C2 - Connecter</span>
-                    <span class="badge">C1 - Administrer</span>
-                </div>
-                
-                <div class="mission-detail" id="m3">
-                    <p style="color: #666;">Détails de la mission à compléter...</p>
-                </div>
-            </div>
+    <div class="mission-card">
+        <div class="mission-header">
+            <h3 class="mission-title">Mission 5 : Maquette de refonte réseau d’administration</h3>
+            <span class="mission-period">Novembre 2024 – Aujourd’hui</span>
+        </div>
+        <div class="comp-badges">
+            <span class="badge">C1 – Administrer</span>
+            <span class="badge">C4 – Sécuriser</span>
+            <a href="maquette.html" class="more">En savoir plus</a>
+        </div>
+    </div>
         </section>
-        <script>
-        function toggleMission(id) {
-            const detail = document.getElementById(id);
-            const wasActive = detail.classList.contains('active');
-            
-            document.querySelectorAll('.mission-detail').forEach(d => {
-                d.classList.remove('active');
-            });
-            
-            if (!wasActive) {
-                detail.classList.add('active');
-            }
-        }
-
-        document.querySelectorAll('a[href^="#"]').forEach(a => {
-            a.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+       
     <footer>
         <p>&copy; 2025 Portfolio BUT RT - Maël HEMON</p>
     </footer>
