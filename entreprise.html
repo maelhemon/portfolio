@@ -359,6 +359,24 @@
                 gap: 1rem;
             }
         }
+        /* ===== ORGANIGRAMMES ===== */
+.organigramme-img {
+    display: block;
+    max-width: 100%;
+    height: auto; /* conserve le ratio */
+    margin: 1.5rem auto; /* centre l'image */
+    border-radius: 8px;
+    border: 1px solid var(--gray);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Version plus lisible sur grands écrans */
+@media (min-width: 1024px) {
+    .organigramme-img {
+        max-width: 80%;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -380,9 +398,7 @@
     <div class="hero-container">
         <div>
             <h1>Présentation de l’entreprise</h1>
-            <p class="subtitle">Entreprise d’accueil & projection professionnelle</p>
-            <p>
-                Cette section présente l’entreprise dans laquelle j’effectue mon alternance / stage,
+                Cette section présente l’entreprise dans laquelle j’effectue mon alternance,
                 mon rôle au sein de celle-ci ainsi que le lien avec mon projet professionnel.
             </p>
         </div>
@@ -409,10 +425,29 @@
 
             <div class="info-card">
                 <h3>Activités</h3>
-                <p>
-                    Le Commissariat au numérique de défense (CND) pilote et coordonne la transformation numérique du ministère des Armées afin de renforcer l’efficacité opérationnelle et la souveraineté numérique. Il définit les orientations stratégiques en matière de systèmes d’information, de cyberdéfense, de données, d’intelligence artificielle et de services numériques, tout en veillant à leur cohérence et à leur sécurité. Le CND accompagne également la modernisation des infrastructures, le développement de solutions logicielles adaptées aux besoins des forces, et la diffusion des usages numériques au sein des armées et services. À travers ces actions, il contribue à l’innovation, à l’interopérabilité et à la résilience des capacités numériques de défense.
+                <ul class="cnd-list">
+    <li>
+        <img src="icons/strategie.png" alt="">
+        Piloter et coordonner la transformation numérique du ministère des Armées
+    </li>
+    <li>
+        <img src="icons/cyber.png" alt="">
+        Définir les orientations stratégiques en systèmes d’information, cyberdéfense, données et IA
+    </li>
+    <li>
+        <img src="icons/securite.png" alt="">
+        Garantir la cohérence, la sécurité et la souveraineté numérique
+    </li>
+    <li>
+        <img src="icons/infrastructure.png" alt="">
+        Moderniser les infrastructures et développer des solutions numériques adaptées aux forces
+    </li>
+    <li>
+        <img src="icons/innovation.png" alt="">
+        Favoriser l’innovation, l’interopérabilité et la résilience des capacités numériques
+    </li>
+</ul>
 
-                </p>
             </div>
         </div>
     </section>
@@ -422,12 +457,13 @@
         <h2 class="section-title">2. Positionnement du service</h2>
 
         <p>
-            Je me situe, comme on peut le voir sur l'organigramme ci-dessous, au sein du groupe réseau du CAN Cherbourg en tant qu'apprenti technicien réseau. Le CAN Cherbourg se situe sous les directives de la Direction d'Appui au Numérique Zonale de Brest (DANZ Brest).
+            Je me situe, comme on peut le voir sur l'organigramme ci-dessous, au sein du groupe réseau du CAN Cherbourg en tant qu'apprenti technicien réseau. Le CAN Cherbourg se situe sous les directives de la Direction d'Appui au Numérique Zonale de Brest (DANZ Brest), CF organigramme du CND.
         </p>
         <p>
            Nous sommes amenés à travailler régulièrement en collaboration avec la division systèmes d'information (SI) et le groupe télécom afin d'assurer un soutien de proximité en continu aux unités se situant dans les départements de la manche et du calvados.
         </p>
-        <p><strong>Organigramme : </strong></p>
+        <br>
+        <p><strong>Organigramme : </strong> <br><img src="organigramme_service.jpg" alt="Organigramme du service" class="organigramme-img"></p>
     </section>
 
     <!-- 3. MISSIONS ET RESPONSABILITÉS -->
