@@ -141,6 +141,65 @@
             padding: 2rem;
             margin-top: 3rem;
         }
+        /* ---------- TRACES SECTION ---------- */
+.traces {
+    margin-top: 2.5rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    border-left: 5px solid var(--france-red);
+}
+
+.traces h3 {
+    color: var(--navy);
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.traces h3::before {
+    content: "📸";
+    font-size: 1.6rem;
+}
+
+.traces p {
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    color: #555;
+}
+
+.traces img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    display: block;
+    margin: 1rem auto;
+    transition: all 0.3s ease;
+}
+
+.traces img:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+}
+
+.traces .image-caption {
+    display: block;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--france-blue);
+    margin-top: 0.5rem;
+    font-weight: 500;
+    background: rgba(255,255,255,0.8);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 300px;
+}
+
     </style>
 </head>
 
@@ -162,24 +221,23 @@
 <main class="container">
     <section class="section">
 
-        <h1 class="section-title">Mission 4 – Mise en place d’un serveur TFTP</h1>
+        <h1 class="section-title">Mission 2 – Mise en place d’un serveur TFTP</h1>
 
         <div class="badges">
-            <span class="badge period">Novembre 2024 – Aujourd’hui</span>
+            <span class="badge period">Novembre 2024 – janvier 2025</span>
             <span class="badge">C1 – Administrer</span>
             <span class="badge">C4 – Sécuriser</span>
         </div>
 
         <p>
-            Cette mission consiste à déployer un serveur TFTP afin de centraliser les sauvegardes
-            et restaurations des configurations des équipements réseaux.
+            Cette mission consiste à déployer un serveur TFTP afin de centraliser les systèmes d'exploitation des switchs afin de les mettre à jour plus facilement.
         </p>
 
         <div class="detail-section">
             <h3>📋 Contexte et Objectifs</h3>
             <ul>
                 <li>Besoin de sauvegarde automatique des équipements réseau</li>
-                <li>Centralisation des fichiers de configuration</li>
+                <li>Centralisation des systèmes d'exploitations des switchs</li>
                 <li>Sécurisation des accès au serveur</li>
             </ul>
         </div>
@@ -201,12 +259,24 @@
                 <li>C4 : sécurisation des échanges et accès</li>
             </ul>
         </div>
+        <div class="traces">
+    <h3>Traces</h3>
+    <figure>
+        <img src="schema_tftp.png" alt="Schéma de l'infrastructure créée pour le projet serveur TFTP">
+        <figcaption class="image-caption">Schéma de l'infrastructure créée pour le projet serveur TFTP</figcaption>
+    </figure>
+    <figure>
+        <img src="transfert_tftp.jpg" alt="Photo du test d'un transfert de fichier sur le serveur">
+        <figcaption class="image-caption">Test d'un transfert de fichier sur le serveur</figcaption>
+    </figure>
+    <figcaption class="image-caption">Sur le schéma nous pouvons voir que le serveur a un accès internet qui lui est fournit par le biais de 2 switchs (un dans le local intégrant la box internet et un autre dans le local serveur) ainsi qu'un accès à un autre réseau local pour que les switchs puissent être mis à jour. <br> Sur la photo nous pouvons voir que le transfert d'un fichier vers ce serveur est un succès.</figcaption>
+    </figcaption>
+</div>
 
         <div class="detail-section">
             <h3>💭 Analyse Réflexive</h3>
             <p>
-                Cette mission m’a permis de comprendre l’importance des sauvegardes réseau et
-                d’appliquer des bonnes pratiques de sécurité.
+                J'ai pu pratiquer grâce à ce projet la partie système (mise en place d'un service) et donc me rendre compte que j'avais pas mal de lacunes concernant ce dernier. Néanmoins j'ai su avec persévérence me rendre au terme de ce projet.
             </p>
         </div>
 
