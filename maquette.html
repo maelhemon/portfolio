@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mission 4 – Serveur TFTP</title>
+    <title>Mission 3 – Maquette de refonte reseau d’administration</title>
 
     <style>
         /* ==== DESIGN IDENTIQUE AU PORTFOLIO ==== */
@@ -18,7 +18,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', sans-serif;
+            font-family: "Segoe UI", sans-serif;
             background: var(--light);
             color: #1a1a1a;
             line-height: 1.6;
@@ -33,7 +33,10 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
-        nav { background: var(--navy); padding: 1rem 0; }
+        nav {
+            background: var(--navy);
+            padding: 1rem 0;
+        }
 
         .nav-container {
             max-width: 1400px;
@@ -44,7 +47,11 @@
             align-items: center;
         }
 
-        .logo { color: white; font-weight: bold; font-size: 1.3rem; }
+        .logo {
+            color: white;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
 
         .nav-links {
             list-style: none;
@@ -56,19 +63,23 @@
             color: white;
             text-decoration: none;
             position: relative;
-            padding-bottom: .3rem;
+            padding-bottom: 0.3rem;
         }
 
         .nav-links a::after {
-            content: '';
+            content: "";
             position: absolute;
-            bottom: 0; left: 0;
-            width: 0; height: 3px;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
             background: var(--france-red);
-            transition: .3s;
+            transition: 0.3s;
         }
 
-        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
 
         .container {
             max-width: 1200px;
@@ -80,7 +91,7 @@
             background: white;
             padding: 3rem;
             border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,.08);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         }
 
         .section-title {
@@ -88,28 +99,33 @@
             color: var(--france-blue);
             border-bottom: 4px solid var(--france-red);
             display: inline-block;
-            padding-bottom: .4rem;
+            padding-bottom: 0.4rem;
             margin-bottom: 1.5rem;
         }
 
         .badges {
             display: flex;
-            gap: .7rem;
+            gap: 0.7rem;
             margin-bottom: 2rem;
             flex-wrap: wrap;
         }
 
         .badge {
             background: var(--gray);
-            padding: .4rem 1rem;
+            padding: 0.4rem 1rem;
             border-radius: 20px;
             font-weight: 600;
             color: var(--france-blue);
         }
 
-        .period { background: var(--france-red); color: white; }
+        .period {
+            background: var(--france-red);
+            color: white;
+        }
 
-        .detail-section { margin-top: 2.5rem; }
+        .detail-section {
+            margin-top: 2.5rem;
+        }
 
         .detail-section h3 {
             color: var(--navy);
@@ -123,7 +139,7 @@
 
         .detail-section li {
             padding-left: 1rem;
-            margin-bottom: .5rem;
+            margin-bottom: 0.5rem;
             position: relative;
         }
 
@@ -132,6 +148,25 @@
             color: var(--france-red);
             position: absolute;
             left: 0;
+        }
+
+        /* === SECTION TRACE === */
+        .trace-section {
+            margin-top: 2.5rem;
+            text-align: center;
+        }
+
+        .trace-section h3 {
+            color: var(--navy);
+            margin-bottom: 1.2rem;
+        }
+
+        .trace-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 3px solid var(--france-blue);
         }
 
         footer {
@@ -149,7 +184,7 @@
 <header>
     <nav>
         <div class="nav-container">
-            <div class="logo">Portfolio 🇫🇷</div>
+            <div class="logo">Portfolio FR</div>
             <ul class="nav-links">
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="missions.html">Missions</a></li>
@@ -162,51 +197,54 @@
 <main class="container">
     <section class="section">
 
-        <h1 class="section-title">Mission 3 – Mise en place d’un serveur TFTP</h1>
+        <h1 class="section-title">Mission 3 – Maquette de refonte reseau d’administration</h1>
 
         <div class="badges">
             <span class="badge period">septembre 2025 – Aujourd’hui</span>
             <span class="badge">C1 – Administrer</span>
-            <span class="badge">C4 – Sécuriser</span>
+            <span class="badge">C4 – Securiser</span>
         </div>
 
         <p>
-            Cette mission consiste à déployer un serveur TFTP afin de centraliser les sauvegardes
-            et restaurations des configurations des équipements réseaux.
+            Cette mission consiste a creer une maquette simulant un reseau d'administration distant pour les equipements reseaux afin de realiser la refonte du reseau actuellement existant.
         </p>
 
         <div class="detail-section">
-            <h3>📋 Contexte et Objectifs</h3>
+            <h3>Contexte et objectifs</h3>
             <ul>
-                <li>Besoin de sauvegarde automatique des équipements réseau</li>
-                <li>Centralisation des fichiers de configuration</li>
-                <li>Sécurisation des accès au serveur</li>
+                <li>Administration a distance</li>
+                <li>Securisation des donnees</li>
             </ul>
         </div>
 
         <div class="detail-section">
-            <h3>⚙️ Tâches Réalisées</h3>
+            <h3>Taches realisees</h3>
             <ul>
-                <li>Installation et configuration du service TFTP</li>
-                <li>Tests de sauvegarde et de restauration</li>
-                <li>Gestion des droits et restrictions d’accès</li>
-                <li>Documentation d’exploitation</li>
+                <li>Mise en place d'un internet simule pour etablir les VPNs IPsec</li>
+                <li>Mise en place de plusieurs VPN IPsec permettant la liaison des sites distants</li>
+                <li>Securisation des communications avec internet via regles de pare-feu (filtrages)</li>
+                <li>Schema de la maquette reseau</li>
             </ul>
         </div>
 
         <div class="detail-section">
-            <h3>🎓 Compétences Mobilisées</h3>
+            <h3>Competences mobilisees</h3>
             <ul>
-                <li>C1 : administration de services réseaux</li>
-                <li>C4 : sécurisation des échanges et accès</li>
+                <li>C1 : administration de services reseaux</li>
+                <li>C4 : securisation des echanges et acces</li>
             </ul>
         </div>
 
+        <!-- SECTION TRACE -->
+        <div class="trace-section">
+            <h3>Trace</h3>
+            <img src="Schema_maquette.jpg" alt="Schema de la maquette reseau">
+        </div>
+
         <div class="detail-section">
-            <h3>💭 Analyse Réflexive</h3>
+            <h3>Analyse reflexive</h3>
             <p>
-                Cette mission m’a permis de comprendre l’importance des sauvegardes réseau et
-                d’appliquer des bonnes pratiques de sécurité.
+                Cette mission a particulierement ete fastidieuse pour moi car je n'avais jamais travaille sur des VPNs IPsec auparavant. J'ai du apprendre a configurer ces VPNs en lisant de la documentation et en testant differentes configurations sur la maquette. Cela m'a permis de mieux comprendre le fonctionnement des VPNs et l'importance de la securisation des communications dans un reseau d'administration.
             </p>
         </div>
 
@@ -214,7 +252,7 @@
 </main>
 
 <footer>
-    <p>&copy; 2025 Portfolio BUT RT – Maël HEMON</p>
+    <p>&copy; 2025 Portfolio BUT RT – Mael HEMON</p>
 </footer>
 
 </body>
